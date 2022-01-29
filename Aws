@@ -1,0 +1,37 @@
+1.Elastic IP, Public IP, Private IP
+2.Cloud Watch
+3.Static website
+4.Ec2 (AMI) Amazon Machine Image
+5.S3 
+6.Cloud Watch
+7.AWS Elastic Beanstalk
+8.AWS Lambda (Pending)
+9.IAM(Identity & Access Management) User->Group->policies->role (IAM,S3,not need region, its working globally) 
+10.EC2 User Data - How to implement AWS user data or How to Bootstrap EC2 Instances
+Start the script 
+#!/bin/bash
+
+Ec2 instance type
+  1. On Demand  (used for short time duration example 1 hour and second) 
+  2. Reserved ( you have reserved for long time such 1 to 3 year, cheap 75% from ondemand )
+  3. SPOT Instance (Pricing bidding, very short term usage, Data Lose possibility)
+  4. Dedicated Host (dedicated Hardware assign, very costly)
+  
+  
+   Ec2 Placement Group
+   1.Cluster (ec2 place all machine in one instance ,used for fast bandwidth, & used for low latency, backup is losed)
+   2.Spread (each ec2 intance different hardware machine, backup is already)
+   3.Partions (Created 7 Partions)
+   
+   
+ Autoscalling vertical & horizontal:
+ 
+ 
+ Configure security group:
+SSH
+ALL TCP
+ALL UDP
+RDP
+All traffic
+HTTP
+HTTPS
