@@ -22,7 +22,7 @@ php artisan optimize:clear   (clear cache)
 
 php artisan migrate 
 
-php artisan migrate:refresh
+php artisan migrate:refresh  (drop all table and run the migrate command)   
 
 php artisan migrate:rollback
 
