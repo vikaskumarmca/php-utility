@@ -110,13 +110,6 @@ https://www.youtube.com/watch?v=NuyouEHghac&list=PLe30vg_FG4OTO7KbQ6TByyY99AiSw1
 https://www.youtube.com/channel/UC_hG9fglfmShkwex1KVydHA/playlists
 ***********************************************************************
 
-********************Basic Tutorial****************************
-https://www.youtube.com/watch?v=nXTr2Di1zH8&list=PL8p2I9GklV4641UBHzqn5SGHao0agJocQ
-
-*********************logic creation ***********
-https://www.youtube.com/watch?v=dIInIuq5C30&list=PLeS3J3RlFi_YFc9rkOFbJRd0NVnW3fJlB&index=1
-**********************************************************************
-
 ********************Advanced tutorail laravel and php
 https://www.youtube.com/channel/UCIlPGCkXqjTDlmFPS6oMU9g/playlists
 https://www.youtube.com/watch?v=RX66grV31Ks&list=PL0yiR-15Ytq--EhSUPyEzRiDZBpI70lyK
@@ -133,7 +126,6 @@ https://www.youtube.com/watch?v=fzolxF5EzG8&list=PL0yiR-15Ytq8_AepuSXIZthj5PX4xJ
 
 larvel project starting
 https://www.youtube.com/watch?v=fU4cblTivZ4&list=RDCMUCvHX2bCZG2m9ddUhwxudKYA&index=21
-
 https://www.youtube.com/watch?v=fzolxF5EzG8&list=PL0yiR-15Ytq8_AepuSXIZthj5PX4xJaah
 *************************************************************************************
 Advantages of Laravel
@@ -156,79 +148,9 @@ Built-in ORM (object-relational mapping).
 5. Image upload : Storage 
 
   
-
-***********************************************
-Laravel autentication
-https://www.youtube.com/watch?v=NuyouEHghac&list=PLe30vg_FG4OTO7KbQ6TByyY99AiSw1MDS
-
-***************************
-/opt/lampp/htdocs/moka_web/routes/api.php
-/opt/lampp/htdocs/moka_web/app/Http/Controllers/UserApiController.php
-/opt/lampp/htdocs/moka_web/routes/providerapi.php
-
-
-
 Best Video Tutorial php step by step
-
 https://www.youtube.com/channel/UCFySUiNfhvtgdgTdWbXnn6Q/playlists
-
-
-Laravel pagination and other service
-
-https://www.youtube.com/watch?v=-ek86PheOrE&list=PL8p2I9GklV47TyERHKYcqTAY9BT6gjivx&index=1
-
-
-
-*************************Larave Project Git Hub Link *****************
-https://github.com/hoadv/employee-mgmt-laravel5.4-adminlte
-
-
-
-******************************************
-https://www.youtube.com/channel/UCnQ2OeYdBZpe4mBgj_nOVAg/playlists
-https://www.youtube.com/channel/UCjM2CgqAXgXQuFjJa732IRw/playlists
-https://www.youtube.com/channel/UCPsopTKQfSgW9XdYkKA6Gdw/playlists
-
-301
-
-0-150 5.50
-151-300 -6
-301-500 6.5
-500-till 7.00
-
-150-825
-150-900
-1*6.50
-=1731
-
-110*2 220
-1951+97.55
-5
-
-
 npm install && npm run dev
-
-all auth file
-
-vendor\laravel\framework\src\Illuminate\Routing\Router.php
-
-vendor\laravel\framework\src\Illuminate\Foundation\Auth\AuthenticatesUsers.php
-all function 
-
-
-https://www.youtube.com/watch?v=wVw4uInYgr0
-
-https://www.youtube.com/watch?v=Kljm9P7JZbI
-https://www.youtube.com/watch?v=nubhLO0SXXA&list=PLg5ltBWATHwd8br0sHrgfLTdLT7onyscZ&index=1
-
-
-
-17 nov 2021
-329+329
-
-
-8920041564
-
 
 
 
