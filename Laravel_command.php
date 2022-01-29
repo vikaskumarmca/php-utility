@@ -1,23 +1,18 @@
 
 
 sudo composer global require laravel/installer
-
 laravel new blog 
 
 Via Composer Create-Project
-
 composer create-project --prefer-dist laravel/laravel project
-
 sudo composer create-project --prefer-dist laravel/laravel laravel_multi_auth "5.8.*
 
 php artisan list   
 php artisan --version  
 php artisan serve       (run laravel application) 
-
-
-php artisan make:migration create_admins_table
-
 php artisan optimize:clear   (clear cache)
+
+**********************************Migrate***************************************************************************
 
 migrate:fresh         Drop all tables and re-run all migrations
 migrate:install       Create the migration repository
@@ -26,6 +21,8 @@ migrate:reset         Rollback all database migrations
 migrate:rollback      Rollback the last database migration
 migrate:status        Show the status of each migration
 
+php artisan make:migration create_admins_table
+
 php artisan migrate 
 
 php artisan migrate:refresh  (drop all table and run the migrate command)   
@@ -33,21 +30,14 @@ php artisan migrate:refresh  (drop all table and run the migrate command)
 php artisan migrate:rollback
 
 php artisan migrate:reset
-
-php artisan make:controller <controller-name> --plain
-
+************************************Controller********************************************************************            
 php artisan make:controller User
-
-php artisan make:controller CategoriesController --resource
-
+            
 php artisan make:controller AdminController
-
-php artisan make:model News
-
-php artisan make:model Admin
-
-php artisan make:model Category --migration
-
+            
+php artisan make:controller <controller-name> --plain
+            
+php artisan make:controller CategoriesController --resource
 
 php artisan -help make:controller
 
@@ -55,24 +45,25 @@ controller and model create one time
 
 php artisan make:controller CarController -r -m Car
 
-php artisan db:seed
+*****************************************Model*********************************************************
+php artisan make:model News
 
-php artisan route:list (display the routing listing)
+php artisan make:model Admin
 
+php artisan make:model Category --migration
 
-
+*******************************************Seeder*******************************************************
 php artisan make:seeder AdminsTableSeeder
-
-composer create-project --prefer-dist cakephp/app:^3.8 cakephp_project
-
-composer dump-autoload
 php artisan db:seed --class=AdminsTableSeeder
 
-
+**************************************************************************************************************
 php artisan cache:clear
 php artisan config:cache
 
-
+php artisan route:list (display the routing listing)
+            
+composer dump-autoload
+            
 DB::enableQueryLog();
             
   
@@ -90,6 +81,9 @@ DB::table('users')
   ->get();	
 
 
+            
+            
+composer create-project --prefer-dist cakephp/app:^3.8 cakephp_project
 *************************Top Prority***************************
 https://www.youtube.com/channel/UC3myEubdLGDXgB-HxI5G1GA
 https://www.youtube.com/watch?v=wpNuSJKc4jc
