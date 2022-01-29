@@ -1,8 +1,17 @@
 
 
-sudo composer global require laravel/installer
+ sudo composer global remove laravel/installer            remove old laravel vesion
+ sudo composer global require laravel/installer           install latest version
+
 laravel new blog 
 
+*****************************
+Jetstream instal
+
+laravel new jetblog --jet
+
+npm install && npm run dev
+**************************************
 Via Composer Create-Project
 composer create-project --prefer-dist laravel/laravel project
 sudo composer create-project --prefer-dist laravel/laravel laravel_multi_auth "5.8.*
@@ -11,6 +20,10 @@ php artisan list
 php artisan --version  
 php artisan serve       (run laravel application) 
 php artisan optimize:clear   (clear cache)
+
+
+
+laravel new blog 
 
 **********************************Migrate***************************************************************************
 
@@ -22,13 +35,9 @@ migrate:rollback      Rollback the last database migration
 migrate:status        Show the status of each migration
 
 php artisan make:migration create_admins_table
-
 php artisan migrate 
-
 php artisan migrate:refresh  (drop all table and run the migrate command)   
-
 php artisan migrate:rollback
-
 php artisan migrate:reset
 ************************************Controller********************************************************************            
 php artisan make:controller User
@@ -49,14 +58,57 @@ php artisan make:controller CarController -r -m Car
 php artisan make:model News
 
 php artisan make:model Admin
-
+            
 php artisan make:model Category --migration
 
 *******************************************Seeder*******************************************************
 php artisan make:seeder AdminsTableSeeder
 php artisan db:seed --class=AdminsTableSeeder
 
-**************************************************************************************************************
+****************************************Stub**********************************************************************
+php artisan make: stub publish
+
+*******************************************Maintenance Mode***************************************************************   
+            
+ php artisan down
+            
+ Bypassing Maintenance Mode
+ php artisan down --secret="maintenancemode"           
+*****************************************************************************************************************************            
+           
+*******************************************************************************
+Create function in the model file
+            
+Accessors - Allows you to alter data after it's fetched from a database.
+we can modify the data when fetching data from the database also used in the display.
+
+
+function getNameAttribute($val)
+{
+    return ucfirst($val)        
+}
+    
+            
+Mutator :The mutator allows you to alter data before it's saved to a database.
+            
+  public function setNameAttribute($val)
+            {
+                 return $this->attribute['name] = 'Mr. '.$val;       
+            }
+              public function setAddressAttribute($val)
+            {
+                 return $this->attribute['address] = $val." ,India";       
+            }
+*********************Relationship******************************************** 
+     public function getdevice()
+            {
+              return $this->hasOne('App\Models\Device);
+            }
+            
+            
+
+********************************************************************
+            
 php artisan cache:clear
 php artisan config:cache
 
@@ -81,6 +133,10 @@ DB::table('users')
   ->get();	
 
 
+            
+            
+            
+            
             
             
 composer create-project --prefer-dist cakephp/app:^3.8 cakephp_project
@@ -150,7 +206,7 @@ Built-in ORM (object-relational mapping).
   
 Best Video Tutorial php step by step
 https://www.youtube.com/channel/UCFySUiNfhvtgdgTdWbXnn6Q/playlists
-npm install && npm run dev
+
 
 
 
