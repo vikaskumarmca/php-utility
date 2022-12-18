@@ -16,6 +16,9 @@ Via Composer Create-Project
 composer create-project --prefer-dist laravel/laravel project
 sudo composer create-project --prefer-dist laravel/laravel laravel_multi_auth "5.8.*
 
+composer create-project laravel/laravel:^8.0 laravel_admin
+
+
 php artisan list   
 php artisan --version  
 php artisan serve       (run laravel application) 
