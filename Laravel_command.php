@@ -44,6 +44,19 @@ php artisan make:controller <controller-name> --plain
 php artisan make:controller CategoriesController --resource
 
 php artisan make:controller CarController -r -m Car
+ 
+php artisan make :model Test -cm
+php artisan make:model Test2 -crm
+
+c controller
+			r resource
+			m migration
+
+			php artisan make:model Test2 --all
+
+
+			php artisan make:model Test2 --seed --factory --controller --migration
+
 
 *****************************************Model*********************************************************
 php artisan make:model Admin            
