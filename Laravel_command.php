@@ -47,8 +47,10 @@ php artisan make:controller CarController -r -m Car
  
 php artisan make :model Test -cm
 php artisan make:model Test2 -crm
-
-c controller
+	
+php artisan make:model Product -msf 
+	Configure model Product with Seeders, Migration, and Factory. 
+	                c-controller
 			r resource
 			m migration
 
@@ -56,7 +58,8 @@ c controller
 
 
 			php artisan make:model Test2 --seed --factory --controller --migration
-
+	
+https://codewithluis.hashnode.dev/how-to-build-basic-api-in-laravel-8-using-insomnia
 
 *****************************************Model*********************************************************
 php artisan make:model Admin            
