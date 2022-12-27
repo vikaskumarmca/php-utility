@@ -59,6 +59,22 @@ php artisan make:model Product -msf
 
 			php artisan make:model Test2 --seed --factory --controller --migration
 	
+	php artisan make:controller - Make Controller file
+
+php artisan make:model - Make a Model file
+
+php artisan make:migration - Make Migration file
+
+php artisan make:seeder - Make Seeder file
+
+php artisan make:factory - Make Factory file
+
+php artisan make:policy - Make Policy file
+
+php artisan make:command - Make a new artisan command
+
+
+	
 https://codewithluis.hashnode.dev/how-to-build-basic-api-in-laravel-8-using-insomnia
 
 *****************************************Model*********************************************************
