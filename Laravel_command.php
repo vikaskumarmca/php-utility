@@ -40,46 +40,33 @@ php artisan make:controller User
 php artisan make:controller AdminController            
 php artisan make:controller <controller-name> --plain
             
- 
 php artisan make:controller CategoriesController --resource
 
 php artisan make:controller CarController -r -m Car
- 
-php artisan make :model Test -cm
-php artisan make:model Test2 -crm
+
+
 	
-php artisan make:model Product -msf 
+php artisan make:migration - Make Migration file
+php artisan make:seeder - Make Seeder file
+php artisan make:factory - Make Factory file
+php artisan make:policy - Make Policy file
+php artisan make:command - Make a new artisan command
+
+https://codewithluis.hashnode.dev/how-to-build-basic-api-in-laravel-8-using-insomnia
+
+*****************************************Model*********************************************************
+php artisan make:model Product
+	
+php artisan make:model Product -crmsf 
 	Configure model Product with Seeders, Migration, and Factory. 
 	                c-controller
 			r resource
 			m migration
+			s seeder
+			f factory
 
-			php artisan make:model Test2 --all
-
-
-			php artisan make:model Test2 --seed --factory --controller --migration
-	
-	php artisan make:controller - Make Controller file
-
-php artisan make:model - Make a Model file
-
-php artisan make:migration - Make Migration file
-
-php artisan make:seeder - Make Seeder file
-
-php artisan make:factory - Make Factory file
-
-php artisan make:policy - Make Policy file
-
-php artisan make:command - Make a new artisan command
-
-
-	
-https://codewithluis.hashnode.dev/how-to-build-basic-api-in-laravel-8-using-insomnia
-
-*****************************************Model*********************************************************
-php artisan make:model Admin            
-php artisan make:model Category --migration
+php artisan make:model Test2 --all
+php artisan make:model Test2 --seed --factory --controller --migration
 
 *******************************************Seeder*******************************************************
 php artisan make:seeder AdminsTableSeeder
@@ -87,7 +74,6 @@ php artisan db:seed --class=AdminsTableSeeder
 
 ****************************************Stub**********************************************************************
 php artisan make: stub publish
- 
  
 php artisan cache:clear
 php artisan config:cache
@@ -102,10 +88,6 @@ DB::table('users')
   ->select()
   ->get();	
      
-            
-            
-
-
 ******dummy data important ********************
 https://www.youtube.com/watch?v=Gb-F0f5-C3U
 https://www.youtube.com/watch?v=fzolxF5EzG8&list=PL0yiR-15Ytq8_AepuSXIZthj5PX4xJaah
