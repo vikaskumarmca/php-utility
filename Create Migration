@@ -26,3 +26,23 @@
             "gender" => $faker->randomElement(["male", "female", "others"]),
             "address_info" => $faker->address,
         ]);
+
+
+php artisan db:seed  
+
+call the  DatabaseSeeder.php 
+
+php artisan make:factory StudentFactory --model=Student
+
+Insert Date using Tinker 
+student::factory()->count(10)->create();
+
+Student::insert([])
+model ke throught insert karte hai 1 
+ DB::table() se create date insert kerta hai
+
+ // $student = new Student();
+	$student->save();
+	create date and update automatically inserted kerta 
+
+	below full result
