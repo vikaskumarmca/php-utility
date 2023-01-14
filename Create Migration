@@ -1,0 +1,5 @@
+  $table->text('description')->nullable();
+  $table->tinyInteger('status')->default('1')->comment('Active/Deactive');
+  $table->enum('status',['active','deactive'])->default('active');
+  $table->softDeletes(); 
+  $table->timestamps();
