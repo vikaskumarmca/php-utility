@@ -11,6 +11,8 @@ npm install && npm run dev
 Via Composer Create-Project
 
 composer create-project --prefer-dist laravel/laravel project
+composer create-project laravel/laravel:^8.0 Projectname
+
 sudo composer create-project --prefer-dist laravel/laravel laravel_multi_auth "5.8.*
 composer create-project laravel/laravel:^8.0 laravel_admin
 
