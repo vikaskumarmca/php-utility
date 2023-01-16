@@ -1,0 +1,15 @@
+DB::table('user')->get();
+	DB::table('user')->select('name','email','username','password')->first();	
+	DB::table('user')->select('name','email')->get();
+	DB::table('user')->find(4);
+
+	DB::table('user')->count('name');
+	DB::table('user')->max('price');
+
+	DB::table('user')->select("name","email","username")->where('active',1)->get();
+	DB::table('user')->distinct()->get();
+
+	DB::table('user')
+			->select(db::raw('count(*) as no_of_row','name','email'))
+			->where('status','=',1)
+		->get();
