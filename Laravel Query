@@ -13,3 +13,69 @@ DB::table('user')->get();
 			->select(db::raw('count(*) as no_of_row','name','email'))
 			->where('status','=',1)
 		->get();
+
+
+ $storeDetail = convertToArray(DB::table($listOfStoresTable)
+								->where("chainID", $chainID)
+								->select("storeID", "storeName")
+								->whereDate("startDateLocal", ">=", $fromDate)
+								->whereDate("startDateLocal", "<=", $toDate)
+								->where('isActive', 1)
+					       ->get());
+
+
+
+
+        $resellerID = $dataArray['resellerID'];
+        $city = '%'; $state = '%'; $country = '%'; $chainID = '%'; $storeID = '%'; $status = '%';
+
+		if(isset($dataArray['city'])){
+        	($dataArray['city'] == "ALL") ? $city = '%' : $city = $dataArray['city'];
+        }
+        if(isset($dataArray['state'])){
+        	($dataArray['state'] == "ALL") ? $state = '%' : $state = $dataArray['state'];
+        }
+        if(isset($dataArray['country'])){
+        	($dataArray['country'] == "ALL") ? $country = '%' : $country = $dataArray['country'];
+        }
+        if(isset($dataArray['chainID'])){
+        	($dataArray['chainID'] == "ALL") ? $chainID = '%' : $chainID = $dataArray['chainID'];
+        }
+        if(isset($dataArray['storeID'])){
+        	($dataArray['storeID'] == "ALL") ? $storeID = '%' : $storeID = $dataArray['storeID'];
+        }
+        if(isset($dataArray['status'])){
+        	($dataArray['status'] == "ALL") ? $status = '%' : $status = $dataArray['status'];
+        }
+
+        $data = DB::table($globalPartnerDeviceOwnership)
+									->leftjoin($globalDeviceMgmt,"$globalDeviceMgmt.licenseNumber","=","$globalPartnerDeviceOwnership.licenseNumber")
+									->leftjoin($listOfStores,"$globalDeviceMgmt.storeID","=","$listOfStores.storeID")
+									->leftjoin($listOfChains,"$globalDeviceMgmt.chainID","=","$listOfChains.chainID")
+									->select("$globalPartnerDeviceOwnership.*","$listOfChains.chainID","$listOfChains.companyName","$listOfStores.storeID","$listOfStores.storeName","$globalDeviceMgmt.*")
+									->where("$globalPartnerDeviceOwnership.resellerID",$resellerID)
+									->where("$listOfChains.regAddCity",'like', $city)
+									->where("$listOfChains.regAddState",'like', $state)
+									->where("$listOfChains.regAddCountry",'like',$country)
+									->where("$globalDeviceMgmt.chainID",'like',$chainID)
+									->where("$globalDeviceMgmt.storeID",'like',$storeID)
+									->where('status','like',$status)
+									->get();
+
+
+								$query  = DB::table('employees as emp')
+										    ->leftjoin('attendance_log as al','al.emp_id','emp.device_emp_id')
+										    ->join('departments as dep','dep.id','emp.department_id')
+										    ->select('emp.*', 'dep.department_name', 'al.auth_date' , DB::raw("MIN(al.auth_time) AS check_in, MAX(al.auth_time) AS check_out"))
+										    ->whereIn('al.emp_id', [1,2,3]) // use your array
+										    ->groupBy('emp.device_emp_id', 
+										    	DB::raw('DATE(al.auth_date_time)')
+										    );
+
+										    if($start_date){
+										        $query  = $query->where('al.auth_date' , '>=' , $start_date);
+										    }
+										    if($end_date){
+										        $query  = $query->where('al.auth_date' , '<=' , $end_date);
+										    }
+										  $data = $query->get();
