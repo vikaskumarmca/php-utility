@@ -3,7 +3,9 @@
   $table->enum('status',['active','deactive'])->default('active');
   $table->softDeletes(); 
   $table->timestamps();
-
+  
+  $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+ 
 
   $table->string("name", 255);
   $table->string("email", 50)->nullable();
