@@ -25,22 +25,16 @@ laravel new blog
 
 **********************************Migrate***************************************************************************
 
-migrate:fresh         Drop all tables and re-run all migrations
-migrate:install       Create the migration repository
-migrate:refresh       Reset and re-run all migrations
-migrate:reset         Rollback all database migrations
-migrate:rollback      Rollback the last database migration
-migrate:status        Show the status of each migration
+php artisan migrate:fresh         Drop all tables and re-run all migrations
+php artisan migrate:install       Create the migration repository
+php artisan migrate:refresh       Reset and re-run all migrations
+php artisan migrate:reset         Rollback all database migrations
+php artisan migrate:rollback      Rollback the last database migration
+php artisan migrate:status        Show the status of each migration
 
-php artisan make:migration create_admins_table
-php artisan migrate 
-php artisan migrate:refresh  (drop all table and run the migrate command)   
-php artisan migrate:rollback
-php artisan migrate:reset
 ************************************Controller ********************************************************************            
-php artisan make:controller User          
-php artisan make:controller AdminController            
-php artisan make:controller <controller-name> --plain
+php artisan make:controller User                     
+
 php artisan make:controller CategoriesController --resource
 
 php artisan make:controller CarController -r -m Car
@@ -56,6 +50,15 @@ https://codewithluis.hashnode.dev/how-to-build-basic-api-in-laravel-8-using-inso
 php artisan make:model Product	
 php artisan make:model student -c -m -s -f
 php artisan make:model Product -crmsf 
+
+php artisan make:model User --all -a()
+
+User.php in the app directory
+create_users_table.php in the database/migrations directory
+UserController.php in the app/Http/Controllers directory
+UserFactory.php in the database/factories directory
+UserSeeder.php in the database/seeds directory
+
 Configure model Product with Seeders, Migration, and Factory. 
 	                c-controller
 			r resource
@@ -63,7 +66,6 @@ Configure model Product with Seeders, Migration, and Factory.
 			s seeder
 			f factory
 
-php artisan make:model Test2 --all -a()
 
 
 *******************************************Seeder*******************************************************
