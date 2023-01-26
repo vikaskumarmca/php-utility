@@ -79,3 +79,33 @@ DB::table('user')->get();
 										        $query  = $query->where('al.auth_date' , '<=' , $end_date);
 										    }
 										  $data = $query->get();
+
+
+
+
+single record show
+student::find(2)
+student::first()
+student::where("id",2)->first();
+student::firstWhere("id",2);
+
+student::find(1)->delete();
+student::destroy(1);
+student::destroy(1,2);
+
+
+updateOrCreate([update condition],[data])
+upsert($data,['uniquekey'],['column name which you want to update'])
+
+same work both method
+student::findOrFail(1) not found go to 404 page
+student::where("id",1)->firstOrFail();
+
+
+student::firstOrCreate(
+            ["id"=>"1"],
+            ["phone"=>9999,"email"=>"vikas@gmail.com"]
+        );  
+first array condition fetch the first record other it will create new record
+
+return result 
