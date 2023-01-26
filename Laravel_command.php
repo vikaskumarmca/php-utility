@@ -41,13 +41,9 @@ php artisan migrate:reset
 php artisan make:controller User          
 php artisan make:controller AdminController            
 php artisan make:controller <controller-name> --plain
-            
 php artisan make:controller CategoriesController --resource
 
 php artisan make:controller CarController -r -m Car
-
-
-	
 php artisan make:migration - Make Migration file
 php artisan make:seeder - Make Seeder file
 php artisan make:factory - Make Factory file
@@ -57,18 +53,18 @@ php artisan make:command - Make a new artisan command
 https://codewithluis.hashnode.dev/how-to-build-basic-api-in-laravel-8-using-insomnia
 
 *****************************************Model*********************************************************
-php artisan make:model Product
-	
+php artisan make:model Product	
+php artisan make:model student -c -m -s -f
 php artisan make:model Product -crmsf 
-	Configure model Product with Seeders, Migration, and Factory. 
+Configure model Product with Seeders, Migration, and Factory. 
 	                c-controller
 			r resource
 			m migration
 			s seeder
 			f factory
 
-php artisan make:model Test2 --all
-php artisan make:model Test2 --seed --factory --controller --migration
+php artisan make:model Test2 --all -a()
+
 
 *******************************************Seeder*******************************************************
 php artisan make:seeder AdminsTableSeeder
@@ -76,7 +72,6 @@ php artisan db:seed --class=AdminsTableSeeder
 
 ****************************************Stub**********************************************************************
 php artisan make: stub publish
- 
 php artisan cache:clear
 php artisan config:cache
 php artisan route:list (display the routing listing)
