@@ -4,6 +4,10 @@
   $table->softDeletes(); 
   $table->timestamps();
   
+  $table->foreignId('user_id')
+  $table->foreignId('user_id')->references('id')->on('users');
+   
+   
   $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
  
 
