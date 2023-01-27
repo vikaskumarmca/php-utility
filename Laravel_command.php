@@ -71,7 +71,7 @@ Configure model Product with Seeders, Migration, and Factory.
 *******************************************Seeder*******************************************************
 php artisan make:seeder AdminsTableSeeder
 php artisan db:seed --class=AdminsTableSeeder
-
+php artisan migrate:fresh --seed
 ****************************************Stub**********************************************************************
 php artisan make: stub publish
 php artisan cache:clear
