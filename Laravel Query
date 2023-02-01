@@ -108,4 +108,13 @@ student::firstOrCreate(
         );  
 first array condition fetch the first record other it will create new record
 
-return result 
+Product::where('status', 0)->update(['is_deleted' => 5]);
+$products = Product::whereIn('id',[41,58,95,59,52,25,63,98,22,50,76,33,58]);
+$products->update(['is_deleted'=> 0]);
+
+$additionalChargesLists = convertToArray(
+				DB::table($additionalChargesTable)->where('isActive', 1)
+				->select('additionalChargeID','accountID','accountName','name','value','chargeType', 
+							DB::raw('CONCAT(name, "-", chargeType) AS uniqueChargeIdentifier'))
+				->get());
+
