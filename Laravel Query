@@ -15,6 +15,10 @@ DB::table('user')->get();
 		->get();
 
 
+$catalogueList = convertToArray(DB::table($catalogueTable)->where('isActive', 1)
+                                            ->select('ID','productID','variantID',DB::raw('CONCAT(productID, "-", variantID) AS concatProdVart'))
+                                            ->get());
+					    
  $storeDetail = convertToArray(DB::table($listOfStoresTable)
 								->where("chainID", $chainID)
 								->select("storeID", "storeName")
