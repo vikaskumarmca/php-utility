@@ -1,3 +1,4 @@
+<?php
 DB::table('user')->get();
 	DB::table('user')->select('name','email','username','password')->first();	
 	DB::table('user')->select('name','email')->get();
@@ -122,3 +123,4 @@ $additionalChargesLists = convertToArray(
 							DB::raw('CONCAT(name, "-", chargeType) AS uniqueChargeIdentifier'))
 				->get());
 
+?>
