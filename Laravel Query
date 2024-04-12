@@ -54,37 +54,36 @@ $catalogueList = DB::table($catalogueTable)->where('isActive', 1)
         }
 
         $data = DB::table($globalPartnerDeviceOwnership)
-									->leftjoin($globalDeviceMgmt,"$globalDeviceMgmt.licenseNumber","=","$globalPartnerDeviceOwnership.licenseNumber")
-									->leftjoin($listOfStores,"$globalDeviceMgmt.storeID","=","$listOfStores.storeID")
-									->leftjoin($listOfChains,"$globalDeviceMgmt.chainID","=","$listOfChains.chainID")
-									->select("$globalPartnerDeviceOwnership.*","$listOfChains.chainID","$listOfChains.companyName","$listOfStores.storeID","$listOfStores.storeName","$globalDeviceMgmt.*")
-									->where("$globalPartnerDeviceOwnership.resellerID",$resellerID)
-									->where("$listOfChains.regAddCity",'like', $city)
-									->where("$listOfChains.regAddState",'like', $state)
-									->where("$listOfChains.regAddCountry",'like',$country)
-									->where("$globalDeviceMgmt.chainID",'like',$chainID)
-									->where("$globalDeviceMgmt.storeID",'like',$storeID)
-									->where('status','like',$status)
-									->get();
+		->leftjoin($globalDeviceMgmt,"$globalDeviceMgmt.licenseNumber","=","$globalPartnerDeviceOwnership.licenseNumber")
+		->leftjoin($listOfStores,"$globalDeviceMgmt.storeID","=","$listOfStores.storeID")
+		->leftjoin($listOfChains,"$globalDeviceMgmt.chainID","=","$listOfChains.chainID")
+		->select("$globalPartnerDeviceOwnership.*","$listOfChains.chainID","$listOfChains.companyName","$listOfStores.storeID","$listOfStores.storeName","$globalDeviceMgmt.*")
+		->where("$globalPartnerDeviceOwnership.resellerID",$resellerID)
+		->where("$listOfChains.regAddCity",'like', $city)
+		->where("$listOfChains.regAddState",'like', $state)
+		->where("$listOfChains.regAddCountry",'like',$country)
+		->where("$globalDeviceMgmt.chainID",'like',$chainID)
+		->where("$globalDeviceMgmt.storeID",'like',$storeID)
+		->where('status','like',$status)
+		->get();
 
 
-								$query  = DB::table('employees as emp')
-										    ->leftjoin('attendance_log as al','al.emp_id','emp.device_emp_id')
-										    ->join('departments as dep','dep.id','emp.department_id')
-										    ->select('emp.*', 'dep.department_name', 'al.auth_date' , DB::raw("MIN(al.auth_time) AS check_in, MAX(al.auth_time) AS check_out"))
-										    ->whereIn('al.emp_id', [1,2,3]) // use your array
-										    ->groupBy('emp.device_emp_id', 
-										    	DB::raw('DATE(al.auth_date_time)')
-										    );
+$query  = DB::table('employees as emp')
+		    ->leftjoin('attendance_log as al','al.emp_id','emp.device_emp_id')
+		    ->join('departments as dep','dep.id','emp.department_id')
+		    ->select('emp.*', 'dep.department_name', 'al.auth_date' , DB::raw("MIN(al.auth_time) AS check_in, MAX(al.auth_time) AS check_out"))
+		    ->whereIn('al.emp_id', [1,2,3]) // use your array
+		    ->groupBy('emp.device_emp_id', 
+			DB::raw('DATE(al.auth_date_time)')
+		    );
 
-										    if($start_date){
-										        $query  = $query->where('al.auth_date' , '>=' , $start_date);
-										    }
-										    if($end_date){
-										        $query  = $query->where('al.auth_date' , '<=' , $end_date);
-										    }
-										  $data = $query->get();
-
+		    if($start_date){
+			$query  = $query->where('al.auth_date' , '>=' , $start_date);
+		    }
+		    if($end_date){
+			$query  = $query->where('al.auth_date' , '<=' , $end_date);
+		    }
+		  $data = $query->get();
 
 
 
@@ -120,7 +119,9 @@ $products->update(['is_deleted'=> 0]);
 $additionalChargesLists = convertToArray(
 				DB::table($additionalChargesTable)->where('isActive', 1)
 				->select('additionalChargeID','accountID','accountName','name','value','chargeType', 
-							DB::raw('CONCAT(name, "-", chargeType) AS uniqueChargeIdentifier'))
+				DB::raw('CONCAT(name, "-", chargeType) AS uniqueChargeIdentifier'))
 				->get());
 
-?>
+
+SELECT * FROM queueBuster.oauth_access_tokens WHERE isActive = 1  
+AND client_id  IN(select client_id from queueBuster.devicesInfo where storeID IN(2453));
