@@ -3,11 +3,10 @@
 3.Static website
 4.Ec2 (AMI) Amazon Machine Image
 5.S3 
-6.Cloud Watch
-7.AWS Elastic Beanstalk
-8.AWS Lambda (Pending)
-9.IAM(Identity & Access Management) User->Group->policies->role (IAM,S3,not need region, its working globally) 
-10.EC2 User Data - How to implement AWS user data or How to Bootstrap EC2 Instances
+6.AWS Elastic Beanstalk
+7.AWS Lambda (Pending)
+8.IAM(Identity & Access Management) User->Group->policies->role (IAM,S3,not need region, its working globally) 
+9.EC2 User Data - How to implement AWS user data or How to Bootstrap EC2 Instances
 Start the script 
 #!/bin/bash
 
