@@ -24,3 +24,6 @@ npm i express-api-cli          used for create project controller and module and
 
 Install mongodb 
 npm install mongoose
+
+npm i debug 
+DEBUG=* nodemon index.js
