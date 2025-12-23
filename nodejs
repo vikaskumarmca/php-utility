@@ -15,3 +15,6 @@ npm i mysql2
 npm i dotenv
 
 npm i cors
+
+
+npm i express-api-cli          used for create project controller and module and everything
