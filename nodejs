@@ -1,6 +1,6 @@
 npm init 
 npm init -y 
-
+npm i mongoose
 
 npm i express         install the express
 
