@@ -7,3 +7,7 @@ npm i express         install the express
 npm i nodemon
 
 npm i colors
+
+npm i morgan
+
+npm i mysql2
