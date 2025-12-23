@@ -5,3 +5,5 @@ npm init -y
 npm i express         install the express
 
 npm i nodemon
+
+npm i colors
