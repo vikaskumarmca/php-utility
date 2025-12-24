@@ -18,6 +18,7 @@ npm i cors
 
 npm i mysql2
 
+npm i winston
 
 npm i express-api-cli          used for create project controller and module and everything
 
