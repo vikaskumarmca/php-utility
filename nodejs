@@ -27,3 +27,16 @@ npm install mongoose
 
 npm i debug 
 DEBUG=* nodemon index.js
+
+
+import chalk from 'chalk';
+
+const error   = chalk.bold.red; // Red color
+const warning = chalk.hex('#FFA500'); // Orange color
+const info    = chalk.hex('#3700ffff'); // Blue color
+const success = chalk.hex('#6200ea'); // Green color
+
+console.log(error('Error!'));
+console.log(warning('Warning!'));
+console.log(info('Info!'));
+console.log(success('Success!'));
