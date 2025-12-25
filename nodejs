@@ -41,3 +41,12 @@ console.log(error('Error!'));
 console.log(warning('Warning!'));
 console.log(info('Info!'));
 console.log(success('Success!'));
+
+
+
+import logger from './src/utils/logger.js';
+
+logger.info('Register API called');
+logger.error('User registration failed');
+logger.warn('Password attempt failed');
+logger.debug('Payload:', { user: 'john_doe' });
